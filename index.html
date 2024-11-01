@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling Example</title>
+</head>
+<body>
+    <h1>Error Handling with Try and Catch</h1>
+    <p id="output"></p>
+    <p id="errorMessage" style="color: red;"></p>
+
+    <script>
+        try {
+            // Attempt to create and map an array (with an intentional error)
+            const arr = undefined; // This will cause an error
+            const mappedArr = arr.map(num => num * 2); // Trying to map undefined
+
+            // Display mapped array if successful
+            document.getElementById("output").textContent = "Mapped Array: " + mappedArr;
+
+        } catch (error) {
+            // Catch and display the error message
+            document.getElementById("errorMessage").textContent = "An error occurred: " + error.message;
+        }
+    </script>
+</body>
+</html>
